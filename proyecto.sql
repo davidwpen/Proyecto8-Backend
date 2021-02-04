@@ -55,10 +55,10 @@ constraint compra_usuarioid_fk foreign key (id_usuario)
 );
 
 create table articulos_favoritos(
+id int auto_increment primary key,
 id_articulo int unsigned not null,
 id_usuario int unsigned not null,
 fecha timestamp default current_timestamp,
-primary key(id_articulo, id_usuario),
 constraint favoritos_articuloid_fk foreign key (id_articulo)
 	references articulos(id) on delete cascade,
 constraint favoritos_usuarioid_fk foreign key (id_usuario)
